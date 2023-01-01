@@ -154,22 +154,28 @@ void display_reverse(){
   }
 }
 
-void search(){
-  if(head == NULL)
+void search()
+{
+  int count = 1;
+  if (head == NULL)
     printf("\n\t\tLinked List is Empty!!");
-  else{
+  else
+  {
     int data;
     printf("Enter the number you want to search:");
     scanf("%d", &data);
     struct node *link = head;
     printf("\t\t");
-    do{
-      if(link->data==data){
-        printf("\n\t\tThe number is found in the linked list!!");
+    do
+    {
+      if (link->data == data)
+      {
+        printf("\n\t\tThe number is found in the linked list!! %d and position is %d", link->data, count);
         return;
       }
+      count++;
       link = link->next;
-    }while(link != NULL);
+    } while (link != NULL);
     printf("\n\t\tThe number is not found in the linked list!!");
   }
 }
